@@ -1,0 +1,31 @@
+.text-center{
+    text-align:center;
+    color: white;
+    margin: 50px 0;
+  }
+
+.mx-auto{
+    margin: auto;
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-col{
+    flex-direction: column;
+}
+
+.items-center{
+    align-items: center;
+}
+
+.container{
+    border: 1px solid #717377;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0px 3px 15px rgba(113,115,119,0.5);
+    width: 450px;
+}
