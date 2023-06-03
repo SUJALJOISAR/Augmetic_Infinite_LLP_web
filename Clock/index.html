@@ -11,6 +11,9 @@
             background-repeat: no-repeat;
             background-size:cover;
         }
+        .text-left{
+            text-align: left;
+        }
     </style>
   </head>
   <body>
@@ -53,15 +56,27 @@
 
 <div class="container my-5">
     <div class="p-5 text-center bg-body-tertiary rounded-3">
-      <!-- <svg class="bi mt-4 mb-3" style="color: var(--bs-indigo);" width="100" height="100"><use xlink:href=""/></svg> -->
       <h1 class="text-body-emphasis">Current Time: <span id="time"></span></h1>
       <p class="col-lg-8 mx-auto fs-5 text-muted">
         Browse Other Cities Time 
       </p>
-      <div class="d-inline-flex gap-2 mb-5">
-        <button class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" type="button">
+      <div class="d-inline gap-2 mb-5">
+        <button class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" type="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapseExample" data-bs-target="#collapseExample">
           Browse Times
         </button>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body" style="margin-top: 10px;">
+                <div class="container my-5">
+                    <div class="p-5 text-left bg-body-tertiary rounded-3">
+                      <ul>
+                        <li><h3 class="text-body-emphasis" >London Time: <span id="londontime"></span></h3></li>
+                        <li><h3 class="text-body-emphasis" >New York Time: <span id="newyorktime"></span></h3></li>
+                        <li><h3 class="text-body-emphasis" >Sydney Time: <span id="sydneytime"></span></h3></li>
+                        <li><h3 class="text-body-emphasis" >China Time: <span id="chinatime"></span></h3></li>
+                      </ul>
+                      </div>
+            </div>
+        </div>
         <!-- <button class="btn btn-outline-secondary btn-lg px-4 rounded-pill" type="button">
           Secondary link
         </button> -->
@@ -76,11 +91,41 @@
         let time;
         const options = { weekday: 'long', year: 'numeric', month: 'long', day:'numeric'
         };
+        const options2 = { hour: '2-digit', minute: '2-digit',second:'2-digit' };
         setInterval(() => {
             a=new Date();
-        time = a.getHours() + ':' + a.getMinutes() + ':' + a.getSeconds();
+        // time = a.getHours() + ':' + a.getMinutes() + ':' + a.getSeconds();
+        time=a.toLocaleTimeString("en-US",{ timeZone: 'Asia/kolkata',hour: '2-digit', minute: '2-digit',second:'2-digit' })
         date = a.toLocaleDateString(undefined,options);
         document.getElementById('time').innerHTML = time + " "+ "<br>on" +" "+  date;
+        }, 1000);
+
+
+        let b;
+        let c;
+        let d;
+        setInterval(() => {
+            b=new Date();
+            document.getElementById('londontime').innerHTML = b.toLocaleTimeString('en-US', { timeZone: 'Europe/london',
+                hour: '2-digit', minute: '2-digit',second:'2-digit' }) +" " + "on"+ " " +b.toLocaleDateString(undefined,options);
+        }, 1000);
+
+        setInterval(() => {
+            c=new Date();
+            document.getElementById('newyorktime').innerHTML = c.toLocaleTimeString('en-US', { timeZone: 'America/new_york',
+                hour: '2-digit', minute: '2-digit',second:'2-digit' })+" " + "on"+ " " +c.toLocaleDateString(undefined,options);;
+        }, 1000);
+
+        setInterval(() => {
+            c=new Date();
+            document.getElementById('sydneytime').innerHTML = c.toLocaleTimeString('en-US', { timeZone: 'Australia/Sydney',
+                hour: '2-digit', minute: '2-digit',second:'2-digit' })+" " + "on"+ " " +c.toLocaleDateString(undefined,options);;
+        }, 1000);
+
+        setInterval(() => {
+            c=new Date();
+            document.getElementById('chinatime').innerHTML = c.toLocaleTimeString('en-US', { timeZone: 'Asia/Shanghai',
+                hour: '2-digit', minute: '2-digit',second:'2-digit' })+" " + "on"+ " " +c.toLocaleDateString(undefined,options);;
         }, 1000);
     </script>
   </body>
