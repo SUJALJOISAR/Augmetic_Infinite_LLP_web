@@ -64,6 +64,8 @@ body{
     width: 75px;
     pointer-events: none;
 }
+/* pointer-events are used when we want that we can't change the option once selected from rock,paper or scissor */
+/* means if we select rock then we cannot touch the other option until  the result of that first comes. once the result comes then we can choose other option such as paper or scissor or again rock */
 
 .option_images{
     display: flex;
@@ -84,6 +86,7 @@ body{
     transition: opacity 0.3s ease;
     cursor: pointer;
 }
+/* opacity means how much the dark image should be . in other words how much less blur the image should be */
 
 .option_image:hover{
     opacity: 1;
