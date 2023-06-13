@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tip Calculator</title>
+  </head>
+  <link rel="stylesheet" href="style.css" />
+  <body>
+    <div class="tool-container">
+      <!--this will contain whole calculator with two boxes.and main heading-->
+      <h1>Tip Calculator</h1>
+
+      <div class="tool-container-field-group">
+        <!--these will container two boxes-->
+
+        <div class="tool-container-field">
+          <!--left box-->
+          <!-- label for Bill -->
+          <div class="tool-input-group">
+            <label for="bill" class="tool-input-label">Bill($):</label>
+            <input
+              type="number"
+              id="inputBill"
+              placeholder="Bill($)"
+              name="bill"
+              class="tool-input-field"
+            />
+          </div>
+          <!-- label for Bill -->
+
+          <!-- label for tip -->
+          <div class="tool-input-group">
+            <label for="tip-present" class="tool-input-label">Tip(%):</label>
+            <input
+              type="number"
+              id="inputTips"
+              placeholder="Tip(%)"
+              name="tips"
+              class="tool-input-field"
+            />
+          </div>
+          <!-- label for tip -->
+
+          <!-- label for persons -->
+          <div class="tool-input-group">
+            <label for="person" class="tool-input-label"
+              >Number of Persons:</label
+            >
+            <input
+              type="number"
+              id="inputPerson"
+              placeholder="Person 👥"
+              name="person"
+              class="tool-input-field"
+            />
+          </div>
+          <!-- label for persons -->
+
+          <!-- buttons -->
+          <div class="tool-input-group">
+            <button
+              onclick="ResetTipCalculator()"
+              class="tool-btn tool-btn-reset"
+            >
+              Reset
+            </button>
+            <button
+              onclick="CalculateTips()"
+              class="tool-btn tool-btn-calculate"
+            >
+              Calculate
+            </button>
+          </div>
+          <!-- buttons -->
+        </div>
+
+        <div id="tipOutput" class="tool-container-field">
+          <!--Right Box-->
+          <!-- output information -->
+          <div id="OutputInfo" class="tool-output-information tool-output-box">
+            <h2>Basic information</h2>
+            <ul>
+              <li>
+                The <b><i>Bill</i></b> field indicates how much your cost is in
+                the droller.
+              </li>
+              <li>
+                The <b><i>Tips</i></b> field indicates the tip percentage you
+                want to give.
+              </li>
+              <li>
+                The <b><i>Number of person</i></b> field indicates how many of
+                you guys want to give the tips.
+              </li>
+            </ul>
+          </div>
+          <!-- output information -->
+
+          <!-- output Result -->
+          <div id="OutputResult" class="tool-output-results tool-output-box">
+            <h2>Result</h2>
+            <table class="tool-output-table">
+              <tr>
+                <td>Bill</td>
+                <td>:</td>
+                <td><span id="bill">100 $</span></td>
+              </tr>
+
+              <tr>
+                <td>Tips</td>
+                <td>:</td>
+                <td><span id="tip">10 %</span></td>
+              </tr>
+
+              <tr>
+                <td>Person</td>
+                <td>:</td>
+                <td><span id="person">2</span> <small>👥</small></td>
+              </tr>
+
+              <tr>
+                <td>Total Tips</td>
+                <td>:</td>
+                <td><span id="totalTips">2</span></td>
+              </tr>
+
+              <tr>
+                <td>Total Bill</td>
+                <td>:</td>
+                <td><span id="totalBill">110 $</span></td>
+              </tr>
+
+              <tr>
+                <td>Per Person Bill</td>
+                <td>:</td>
+                <td><span id="perPersonBill">55 $</span></td>
+              </tr>
+            </table>
+          </div>
+          <!-- output Result -->
+        </div>
+      </div>
+    </div>
+
+    <script src="project-common-js.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
