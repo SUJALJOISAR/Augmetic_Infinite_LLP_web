@@ -14,6 +14,12 @@ function CalculateTips() {
   var Person = document.getElementById("inputPerson").value;
 
   if (ValidateTipCalculatorForm(Bill, Tips, Person)) {
+
+    Bill=Number(Bill);
+    Tips=Number(Tips);
+    Person=Number(Person);
+
+
     _cmnRemoveAllErrorMessage();
     var TotalBill, TotalTips, PerPersonTips;
 
@@ -28,12 +34,12 @@ function CalculateTips() {
     // document.getElementById("tip").innerHTML = Tips;
     // document.getElementById("person").innerHTML = Person;
 
-    SetTipResult("bill", Bill);
+    SetTipResult("bill", (Bill.toFixed(2)));//to use Math function first convert all variables into Number datatype bacuase default datatype is string 
     SetTipResult("tip", Tips);
     SetTipResult("person", Person);
-    SetTipResult("totalTips",TotalTips);
-    SetTipResult("totalBill", TotalBill);
-    SetTipResult("perPersonBill", PerPersonTips);
+    SetTipResult("totalTips",(TotalTips.toFixed(2)));
+    SetTipResult("totalBill", (TotalBill.toFixed(2)));
+    SetTipResult("perPersonBill", (PerPersonTips.toFixed(2)));
   }
 }
 
