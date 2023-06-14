@@ -126,7 +126,7 @@
   display: flex;
 }
 
-.tool-output-box h2 {
+.tool-output-box h2{
   text-align: center;
   margin-bottom: 10px;
   font-size: 30px;
@@ -171,6 +171,22 @@
   border-top: 1px solid black;
   border-collapse: collapse;
 }
+
+.tool-error-border{
+  border: 2px solid red;
+}
+.tool-error-message{
+  display: block;
+  color: red;
+  font-size: 11px;
+  font-style: italic;
+  font-weight: 800;
+  margin: 5px 5px 0 5px;
+  position: absolute;
+  bottom: 1px;
+  right: 0px;
+}
+
 
 @media only screen and (max-width: 700px) {
   .tool-container {

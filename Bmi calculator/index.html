@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="tool-container"><!--these will container whole calculator with heading and two boxes-->
+        <h1>BMI Calculator</h1>
+        <div class="tool-container-field-group"><!--These will container two boxes-->
+            <div id="bmiInput" class="tool-container-field"><!--left box-->
+
+                <div class="tool-input-group"><!--for height-->
+                    <div class="tool-input-label">
+                        <label for="heightUnit">Height:</label>
+                    </div>
+                    <select name="height" id="heightUnit" class="tool-select-group">
+                        <option value="Feet">Feet</option>
+                        <option value="Inch">Inch</option>
+                        <option value="Centimeter">Centimeter</option>
+                        <option value="Meter">Meter</option>
+                    </select>
+                    <input type="number" id="bmiHeight" placeholder="Height" class="tool-input-field">
+                </div>
+
+
+                <div class="tool-input-group"><!--for weight-->
+                    <div class="tool-input-label">
+                        <label for="weightUnit">Weight:</label>
+                    </div>
+                    <select name="weight" id="weightUnit" class="tool-select-group">
+                        <option value="Kg">Kg</option>
+                        <option value="Pound">Pound</option>
+                    </select>
+                    <input type="number" id="bmiWeight" placeholder="Weight" class="tool-input-field">
+                </div>
+
+                <div class="tool-input-group"><!--buttons-->
+                    <button onclick="BmiCalculatorReset()" class="tool-btn tool-btn-reset">Reset</button>
+                    <button onclick="BmiCalculation()" class="tool-btn tool-btn-calculate">Calculate</button>
+                </div>
+            </div>
+
+            <div class="tool-container-field"><!--right box-->
+                <div id="OutputInfo" class="tool-output-information tool-output-box">
+                    <ul>
+                        <li>Underweight = <18.5</li>
+                        <li>Normal weight = 18.5 - 24.9</li>
+                        <li>Overweigth = 25 - 29.9</li>
+                        <li>Obesity = BMI of 30 or greater</li>
+                    </ul>
+                </div>
+
+                <div id="OutputResult" class="tool-output-results tool-output-box">
+                    <h2>Results</h2>
+                    <table class="tool-output-table">
+                        <tr>
+                            <td>BMI Score</td>
+                            <td>:</td>
+                            <td><span id="bmiResult">00</span></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>  
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="Project-common-js.js"></script>
+</body>
+</html>
