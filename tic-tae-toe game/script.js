@@ -1,16 +1,16 @@
 //selecting all required elements
-const selectBox =  document.querySelector(".select-box"),
-selectXBtn = selectBox.querySelector(".playerX"),
-selectOBtn = selectBox.querySelector(".playerO"),
+const selectBox =  document.querySelector(".select-box");
+selectXBtn = selectBox.querySelector(".playerX");
+selectOBtn = selectBox.querySelector(".playerO");
 playBoard = document.querySelector(".play-board");
 allBox = document.querySelectorAll("section span");
-players = document.querySelector('.players'),
-resultBox = document.querySelector('.result-box'),
-wonText = resultBox.querySelector('.won-text'),
+players = document.querySelector('.players');
+resultBox = document.querySelector('.result-box');
+wonText = resultBox.querySelector('.won-text');
 replayBtn = resultBox.querySelector('button');
 
 window.onload = () =>{//once window loaded
-    for(let i=0;i<allBox.length;i++){//add onlcick attribute in all available section's span
+    for(let i=0;i<allBox.length;i++){//add onclick attribute in all available section's span
         allBox[i].setAttribute("onclick","clickedBox(this)");//here we have add onclick eventlistener through dom manipulation and function clickedBox() is called
     }
 
@@ -38,7 +38,7 @@ function clickedBox(element)
         element.innerHTML = `<i class="${playerOIcon}"></i>`;//adding circle icon tag inside user clicked element
         players.classList.add("active");
         //if player select O then we'll change the playerSign value to O
-        playerSign = "O";  //if player will be O then we'll chnage the sign
+        playerSign = "O";  //if player will be O then we'll change the sign
         element.setAttribute("id",playerSign);
     }
     else{
